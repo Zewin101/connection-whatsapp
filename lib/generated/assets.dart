@@ -2,7 +2,8 @@
 class Assets {
   Assets._();
 
-  static const String imageBackground = 'assets/image/background.png';
+  static const String imageBack = 'assets/image/back.png';
+  static const String imageSend = 'assets/image/send.png';
   static const String imageWhatsapp = 'assets/image/whatsapp.png';
 
 }
