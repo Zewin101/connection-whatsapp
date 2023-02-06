@@ -1,5 +1,6 @@
-import 'package:artawia/layout/layoutScreen.dart';
+import 'package:zewin/layout/layoutScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:zewin/splash/splashSceern.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Whatsapp Demo',
-      initialRoute:LayoutScreen.routeName ,
+      initialRoute:SplashPage.routeName ,
       routes: {
+        SplashPage.routeName:(context) => SplashPage(),
         LayoutScreen.routeName:(context) => LayoutScreen(),
       },
 

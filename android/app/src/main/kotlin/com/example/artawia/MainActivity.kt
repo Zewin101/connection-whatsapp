@@ -1,4 +1,4 @@
-package com.example.artawia
+package com.example.zewin
 
 import io.flutter.embedding.android.FlutterActivity
 

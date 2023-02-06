@@ -3,7 +3,7 @@ class Assets {
   Assets._();
 
   static const String imageBack = 'assets/image/back.png';
-  static const String imageSend = 'assets/image/send.png';
-  static const String imageWhatsapp = 'assets/image/whatsapp.png';
+  static const String imageLogo = 'assets/image/logo.jpg';
+  static const String imageWhatsAppLogo = 'assets/image/WhatsApp-logo.png';
 
 }
