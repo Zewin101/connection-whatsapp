@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:zewin/layout/url.dart';
+import 'package:zewin/componant/url.dart';
 
 var snackBar = const SnackBar(
   content: Text(
@@ -17,6 +17,7 @@ void showMessage(BuildContext context,{ bool? ok, String? controller}) {
   if (!ok!) {
      ScaffoldMessenger.of(context).showSnackBar(snackBar);
   } else {
-    UrlCreate.launchUrl1(text);
+    UrlCreate.launchUrlWhatsapp(text);
+
   }
 }

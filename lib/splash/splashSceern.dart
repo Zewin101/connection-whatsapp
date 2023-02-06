@@ -37,7 +37,7 @@ class _SplashPageState extends State<SplashPage> {
       ),
       ),
       navigator: LayoutScreen(),
-      durationInSeconds: 5,
+      durationInSeconds: 2,
       logoWidth:MediaQuery.of(context).size.width*0.60,
       loaderColor: Colors.green,
     );

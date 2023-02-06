@@ -1,11 +1,11 @@
-import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:zewin/layout/snackBar.dart';
-import 'package:zewin/layout/url.dart';
+
+import 'package:zewin/componant/snackBar.dart';
+import 'package:zewin/componant/url.dart';
 
 import '../generated/assets.dart';
 
@@ -137,26 +137,94 @@ class _LayoutScreenState extends State<LayoutScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8
+                        ),
+                        child: Container(
+                          height: 50,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.green, // foreground
+                              ),
+                              onPressed: () {
+                                showMessage(context,
+                                    controller: whatsappController.text, ok: true);
+                              },
+                              child: Text(
+                                "Whatsapp",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              )),
+                        ),
                       ),
-                      Container(
-                        height: 50,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              backgroundColor: Colors.green, // foreground
-                            ),
-                            onPressed: () {
-                              showMessage(context,
-                                  controller: whatsappController.text, ok: true);
-                            },
-                            child: Text(
-                              "Whatsapp",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            )),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8
+                        ),
+                        child: Container(
+                          height: 50,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.green, // foreground
+                              ),
+                              onPressed: () {
+                                UrlCreate.launchUrlSms(whatsappController.text);
+                                print(whatsappController.text);
+                              },
+                              child: Text(
+                                "SMS",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              )),
+                        ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8
+                        ),
+                        child: Container(
+                          height: 50,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.green, // foreground
+                              ),
+                              onPressed: () {
+                                UrlCreate.launchUrlCall(whatsappController.text);
+                              },
+                              child: Text(
+                                "Call",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8
+                        ),
+                        child: Container(
+                          height: 50,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.green, // foreground
+                              ),
+                              onPressed: () {
+                                 UrlCreate.launchUrlMessenger(whatsappController.text);
+
+                              },
+                              child: Text(
+                                "Messenger",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                      ),
+
                     ],
                   ),
                 ),
