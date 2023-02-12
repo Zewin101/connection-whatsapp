@@ -115,10 +115,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
                         ],
                         controller: whatsappController,
                         decoration: InputDecoration(
-                          hintText: "         ادخل الرقم كامل بكود الدولة",
+
+                          hintText: "                ادخل الرقم ",
                           hintStyle: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w900,
                               color: Colors.green),
                           prefixIcon: Icon(Icons.phone),
                           border: OutlineInputBorder(
@@ -206,25 +207,23 @@ class _LayoutScreenState extends State<LayoutScreen> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 8
                         ),
-                        child: Container(
-                          height: 50,
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                backgroundColor: Colors.green, // foreground
-                              ),
-                              onPressed: () {
-                                 UrlCreate.launchUrlMessenger(whatsappController.text);
-
-                              },
-                              child: Text(
-                                "Messenger",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                              )),
-                        ),
+                        // child: Container(
+                        //   height: 50,
+                        //   child: ElevatedButton(
+                        //       style: ElevatedButton.styleFrom(
+                        //         foregroundColor: Colors.white,
+                        //         backgroundColor: Colors.green, // foreground
+                        //       ),
+                        //       onPressed: () {
+                        //          UrlCreate.launchUrlMessenger(whatsappController.text);
+                        //       },
+                        //       child: Text(
+                        //         "Messenger",
+                        //         style: TextStyle(
+                        //             fontSize: 30, fontWeight: FontWeight.bold),
+                        //       )),
+                        // ),
                       ),
-
                     ],
                   ),
                 ),

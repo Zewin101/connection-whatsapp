@@ -1,4 +1,4 @@
-import 'package:zewin/layout/layoutScreen.dart';
+import 'package:zewin/screens/whatsappScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:zewin/splash/splashSceern.dart';
 
