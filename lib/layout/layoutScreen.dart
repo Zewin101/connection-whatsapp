@@ -62,7 +62,7 @@ class Layout_screen extends StatelessWidget {
                     label: "Setting"),
               ],
               iconSize: 30,
-              selectedItemColor: Colors.deepPurple,
+              selectedItemColor: Colors.black,
               unselectedItemColor: Colors.white,
               onTap: (index) {
                 provider.changeTap(index);

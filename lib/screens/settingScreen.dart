@@ -73,7 +73,11 @@ class Setting_Screen extends StatelessWidget {
                   ),
                     onPressed: (){
                     WhatsData whatsData=WhatsData(description: provider.descriptionController.text);
-                      print("add to firebase");
+                   if(provider.enabelEdit&&provider.descriptionController.text!=""){
+                     addWhatsToFirestore(whatsData);
+                     print("add to firebase");
+                   }
+
                       provider.enableEditTextForm(false);
                     },
                     child: Text("Save",
@@ -91,8 +95,7 @@ class Setting_Screen extends StatelessWidget {
                     ),
                     onPressed: (){
                      provider.enableEditTextForm(true);
-                      WhatsData whatsData=WhatsData(description: provider.descriptionController.text);
-                      addWhatsToFirestore(whatsData);
+
                       print("add to firebase");
                     },
                     child: Text("Edit",
