@@ -3,21 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:provider/provider.dart';
 
 import 'package:zewin/componant/snackBar.dart';
 import 'package:zewin/componant/url.dart';
+import 'package:zewin/provider/provider.dart';
 
 import '../generated/assets.dart';
 
-class LayoutScreen extends StatefulWidget {
-  const LayoutScreen({Key? key}) : super(key: key);
+class WhatsappScreen extends StatefulWidget {
+  const WhatsappScreen({Key? key}) : super(key: key);
   static const String routeName = "home";
 
   @override
-  State<LayoutScreen> createState() => _LayoutScreenState();
+  State<WhatsappScreen> createState() => _LayoutScreenState();
 }
 
-class _LayoutScreenState extends State<LayoutScreen> {
+class _LayoutScreenState extends State<WhatsappScreen> {
   var whatsappController = TextEditingController();
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -28,6 +30,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
@@ -77,8 +80,9 @@ class _LayoutScreenState extends State<LayoutScreen> {
                           print(value);
                           showMessage(
                             context,
-                            controller: controller.text,
+                            controllerNumber: controller.text,
                             ok: value,
+                            controllerMessage: provider.descriptionController.text
                           );
                         },
                         selectorConfig: const SelectorConfig(
@@ -115,7 +119,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
                         ],
                         controller: whatsappController,
                         decoration: InputDecoration(
-
                           hintText: "                ادخل الرقم ",
                           hintStyle: TextStyle(
                               fontSize: 25,
@@ -151,7 +154,9 @@ class _LayoutScreenState extends State<LayoutScreen> {
                               ),
                               onPressed: () {
                                 showMessage(context,
-                                    controller: whatsappController.text, ok: true);
+                                    controllerNumber: whatsappController.text, ok: true,
+                                controllerMessage: provider.descriptionController.text
+                                );
                               },
                               child: Text(
                                 "Whatsapp",
@@ -172,7 +177,9 @@ class _LayoutScreenState extends State<LayoutScreen> {
                                 backgroundColor: Colors.green, // foreground
                               ),
                               onPressed: () {
-                                UrlCreate.launchUrlSms(whatsappController.text);
+                                UrlCreate.launchUrlSms(numPhone: whatsappController.text,
+                                  messageWhats: provider.descriptionController.text,
+                                );
                                 print(whatsappController.text);
                               },
                               child: Text(
@@ -194,7 +201,8 @@ class _LayoutScreenState extends State<LayoutScreen> {
                                 backgroundColor: Colors.green, // foreground
                               ),
                               onPressed: () {
-                                UrlCreate.launchUrlCall(whatsappController.text);
+                                UrlCreate.launchUrlCall(numPhone: whatsappController.text,
+                                messageWhats: provider.descriptionController.text);
                               },
                               child: Text(
                                 "Call",
@@ -207,22 +215,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 8
                         ),
-                        // child: Container(
-                        //   height: 50,
-                        //   child: ElevatedButton(
-                        //       style: ElevatedButton.styleFrom(
-                        //         foregroundColor: Colors.white,
-                        //         backgroundColor: Colors.green, // foreground
-                        //       ),
-                        //       onPressed: () {
-                        //          UrlCreate.launchUrlMessenger(whatsappController.text);
-                        //       },
-                        //       child: Text(
-                        //         "Messenger",
-                        //         style: TextStyle(
-                        //             fontSize: 30, fontWeight: FontWeight.bold),
-                        //       )),
-                        // ),
+
                       ),
                     ],
                   ),

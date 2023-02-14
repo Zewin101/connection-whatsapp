@@ -12,12 +12,13 @@ var snackBar = const SnackBar(
 );
 
 
-void showMessage(BuildContext context,{ bool? ok, String? controller}) {
-  var text = controller;
+void showMessage(BuildContext context,{ bool? ok, String? controllerNumber,String? controllerMessage}) {
+  var text = controllerNumber;
+  var textMessage=controllerMessage;
   if (!ok!) {
      ScaffoldMessenger.of(context).showSnackBar(snackBar);
   } else {
-    UrlCreate.launchUrlWhatsapp(text);
+    UrlCreate.launchUrlWhatsapp(numPhone: text,messageWhats: textMessage);
 
   }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "631945531097",
+    "project_id": "whats-6c396",
+    "storage_bucket": "whats-6c396.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631945531097:android:22155e827aa3c9534ef8c8",
+        "android_client_info": {
+          "package_name": "com.example.zewin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631945531097-ds5i11hra2h6s5lns8egglifcl75rgl2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCSF9DlNC-_mNF1AokQgAoQjBuQBlB8i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631945531097-ds5i11hra2h6s5lns8egglifcl75rgl2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

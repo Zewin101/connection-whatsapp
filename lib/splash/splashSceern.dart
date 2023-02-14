@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:zewin/generated/assets.dart';
 import 'package:zewin/screens/whatsappScreen.dart';
 
+import '../layout/layoutScreen.dart';
+
 class SplashPage extends StatefulWidget {
   SplashPage({Key? key}) : super(key: key);
   static const String routeName="splash";
@@ -36,7 +38,7 @@ class _SplashPageState extends State<SplashPage> {
           color: Colors.green
       ),
       ),
-      navigator: LayoutScreen(),
+      navigator: Layout_screen(),
       durationInSeconds: 2,
       logoWidth:MediaQuery.of(context).size.width*0.60,
       loaderColor: Colors.green,

@@ -2,8 +2,10 @@
 class Assets {
   Assets._();
 
+  static const String imageApplications = 'assets/image/applications.png';
   static const String imageBack = 'assets/image/back.png';
   static const String imageLogo = 'assets/image/logo.jpg';
+  static const String imageMenu = 'assets/image/menu.png';
   static const String imageWhatsAppLogo = 'assets/image/WhatsApp-logo.png';
 
 }

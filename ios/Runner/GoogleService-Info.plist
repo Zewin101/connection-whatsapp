@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>631945531097-s74lk98ok0b3i739t2uep7epbcvgm0qm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.631945531097-s74lk98ok0b3i739t2uep7epbcvgm0qm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAXb7k_rY3iGjVAszQN6C47-tkgYTLd62k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>631945531097</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.zewin</string>
+	<key>PROJECT_ID</key>
+	<string>whats-6c396</string>
+	<key>STORAGE_BUCKET</key>
+	<string>whats-6c396.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:631945531097:ios:a0b94aac6d151e8d4ef8c8</string>
+</dict>
+</plist>
