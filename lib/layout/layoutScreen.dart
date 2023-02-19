@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zewin/provider/provider.dart';
-
 import 'package:zewin/screens/whatsappScreen.dart';
-
 import '../generated/assets.dart';
 import '../screens/settingScreen.dart';
 

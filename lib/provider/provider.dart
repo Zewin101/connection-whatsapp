@@ -8,7 +8,8 @@ class MyProvider extends ChangeNotifier{
     notifyListeners();
   }
   //-----------------------------
-  var descriptionController = TextEditingController();
+  var descriptionController = TextEditingController(text: "السلام عليكم\n.. ");
+
   bool enabelEdit=false;
   void enableEditTextForm(bool enable){
     enabelEdit=enable;

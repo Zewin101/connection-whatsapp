@@ -1,6 +1,8 @@
 class WhatsData {
+  static const String COLLESTION_DATA = "WhatsData";
   String id;
   String description;
+
   WhatsData({
     this.id = "",
     required this.description,
