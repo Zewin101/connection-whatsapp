@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import '../../model/whatappModel.dart';
+import '../../screens/loginScreen.dart';
 
 CollectionReference users =
     FirebaseFirestore.instance.collection(WhatsData.COLLESTION_DATA);
@@ -18,14 +19,16 @@ CollectionReference<WhatsData> getWhatsCollection() {
 
 Future<void> addData(WhatsData whatsData) async {
   var getWhatCollection = await getWhatsCollection();
-  var docRef = getWhatCollection.doc("0104252746");
-  whatsData.id=docRef.id;
+  final userCredential = await FirebaseAuth.instance.signInAnonymously();
+  var docRef = getWhatCollection.doc(userCredential.user?.uid??'');
+  whatsData.id=userCredential.user?.uid??'';
   docRef.set(whatsData);
 }
 
-Future<void> updateUser(WhatsData whatsData) {
-  whatsData.id=getWhatsCollection().doc("0104252746").id;
-  return getWhatsCollection().doc("0104252746").update(whatsData.toJson());
+Future<void> updateUser(WhatsData whatsData) async{
+  var userCredential = await FirebaseAuth.instance.signInAnonymously();
+  whatsData.id=userCredential.user?.uid??'';
+  return getWhatsCollection().doc(whatsData.id).update(whatsData.toJson());
 }
 
 Future<WhatsData?> readUserFromFirestore(String id)async {

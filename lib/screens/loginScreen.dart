@@ -10,14 +10,14 @@ import '../sheard/remote/firbaseUtilis.dart';
 class Login_Screen extends StatefulWidget {
   Login_Screen({Key? key}) : super(key: key);
   static const String routeName = "loginScreen";
-
+  static  late UserCredential credential;
   @override
   State<Login_Screen> createState() => _Login_ScreenState();
 }
 
 class _Login_ScreenState extends State<Login_Screen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late UserCredential credential;
+
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);

@@ -72,6 +72,12 @@ class Layout_screen extends StatelessWidget {
               currentIndex: provider.currentIndex,
             ),
           ),
+          appBar: AppBar(
+            backgroundColor: Colors.green,
+            actions: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.exit_to_app))
+            ],
+          ),
           body:taps[provider.currentIndex] ,
         ),
       ],

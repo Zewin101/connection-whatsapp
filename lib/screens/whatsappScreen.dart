@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -30,7 +29,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var provider=Provider.of<MyProvider>(context);
+    var provider = Provider.of<MyProvider>(context);
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
@@ -49,15 +48,16 @@ class _LayoutScreenState extends State<WhatsappScreen> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
+
             centerTitle: true,
             elevation: 0.0,
             backgroundColor: Colors.transparent,
             title: const Text(
               'Whatsapp',
-              style:
-                  TextStyle(color: Colors.green,
-                      fontSize: 55,
-                      fontWeight: FontWeight.w900),
+              style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 55,
+                  fontWeight: FontWeight.w900),
             ),
             toolbarHeight: 150,
           ),
@@ -69,7 +69,6 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                 padding: const EdgeInsets.all(16.0),
                 child: SingleChildScrollView(
                   child: Column(
-
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       InternationalPhoneNumberInput(
@@ -78,12 +77,11 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         },
                         onInputValidated: (bool value) {
                           print(value);
-                          showMessage(
-                            context,
-                            controllerNumber: controller.text,
-                            ok: value,
-                            controllerMessage: provider.descriptionController.text
-                          );
+                          showMessage(context,
+                              controllerNumber: controller.text,
+                              ok: value,
+                              controllerMessage:
+                                  provider.descriptionController.text);
                         },
                         selectorConfig: const SelectorConfig(
                           selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
@@ -117,7 +115,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(13),
                         ],
-                        controller:provider.sendPhoneController,
+                        controller: provider.sendPhoneController,
                         decoration: InputDecoration(
                           hintText: "                ادخل الرقم ",
                           hintStyle: TextStyle(
@@ -142,9 +140,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Container(
                           height: 50,
                           child: ElevatedButton(
@@ -154,9 +150,11 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                               ),
                               onPressed: () {
                                 showMessage(context,
-                                    controllerNumber: provider.sendPhoneController.text, ok: true,
-                                controllerMessage: provider.descriptionController.text
-                                );
+                                    controllerNumber:
+                                        provider.sendPhoneController.text,
+                                    ok: true,
+                                    controllerMessage:
+                                        provider.descriptionController.text);
                               },
                               child: Text(
                                 "Whatsapp",
@@ -166,9 +164,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Container(
                           height: 50,
                           child: ElevatedButton(
@@ -177,8 +173,10 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                                 backgroundColor: Colors.green, // foreground
                               ),
                               onPressed: () {
-                                UrlCreate.launchUrlSms(numPhone: provider.sendPhoneController.text,
-                                  messageWhats: provider.descriptionController.text,
+                                UrlCreate.launchUrlSms(
+                                  numPhone: provider.sendPhoneController.text,
+                                  messageWhats:
+                                      provider.descriptionController.text,
                                 );
                                 print(provider.sendPhoneController.text);
                               },
@@ -190,9 +188,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Container(
                           height: 50,
                           child: ElevatedButton(
@@ -201,8 +197,10 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                                 backgroundColor: Colors.green, // foreground
                               ),
                               onPressed: () {
-                                UrlCreate.launchUrlCall(numPhone:provider.sendPhoneController.text,
-                                messageWhats: provider.descriptionController.text);
+                                UrlCreate.launchUrlCall(
+                                    numPhone: provider.sendPhoneController.text,
+                                    messageWhats:
+                                        provider.descriptionController.text);
                               },
                               child: Text(
                                 "Call",
@@ -212,10 +210,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8
-                        ),
-
+                        padding: const EdgeInsets.symmetric(vertical: 8),
                       ),
                     ],
                   ),
