@@ -117,7 +117,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(13),
                         ],
-                        controller: whatsappController,
+                        controller:provider.sendPhoneController,
                         decoration: InputDecoration(
                           hintText: "                ادخل الرقم ",
                           hintStyle: TextStyle(
@@ -154,7 +154,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                               ),
                               onPressed: () {
                                 showMessage(context,
-                                    controllerNumber: whatsappController.text, ok: true,
+                                    controllerNumber: provider.sendPhoneController.text, ok: true,
                                 controllerMessage: provider.descriptionController.text
                                 );
                               },
@@ -177,10 +177,10 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                                 backgroundColor: Colors.green, // foreground
                               ),
                               onPressed: () {
-                                UrlCreate.launchUrlSms(numPhone: whatsappController.text,
+                                UrlCreate.launchUrlSms(numPhone: provider.sendPhoneController.text,
                                   messageWhats: provider.descriptionController.text,
                                 );
-                                print(whatsappController.text);
+                                print(provider.sendPhoneController.text);
                               },
                               child: Text(
                                 "SMS",
@@ -201,7 +201,7 @@ class _LayoutScreenState extends State<WhatsappScreen> {
                                 backgroundColor: Colors.green, // foreground
                               ),
                               onPressed: () {
-                                UrlCreate.launchUrlCall(numPhone: whatsappController.text,
+                                UrlCreate.launchUrlCall(numPhone:provider.sendPhoneController.text,
                                 messageWhats: provider.descriptionController.text);
                               },
                               child: Text(

@@ -14,15 +14,18 @@ class Setting_Screen extends StatefulWidget {
 }
 
 class _Setting_ScreenState extends State<Setting_Screen> {
-  GlobalKey<FormState>formKey=GlobalKey<FormState>();
-@override
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+WhatsData whatsData=WhatsData(description: "السلاك عليكم ");
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    addData(whatsData);
   }
+
   @override
   Widget build(BuildContext context) {
-    var provider=Provider.of<MyProvider>(context);
+    var provider = Provider.of<MyProvider>(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -32,10 +35,8 @@ class _Setting_ScreenState extends State<Setting_Screen> {
           backgroundColor: Colors.transparent,
           title: const Text(
             'Whatsapp',
-            style:
-            TextStyle(color: Colors.green,
-                fontSize: 55,
-                fontWeight: FontWeight.w900),
+            style: TextStyle(
+                color: Colors.green, fontSize: 55, fontWeight: FontWeight.w900),
           ),
           toolbarHeight: 150,
         ),
@@ -61,82 +62,76 @@ class _Setting_ScreenState extends State<Setting_Screen> {
                     SizedBox(
                       height: 15,
                     ),
-                   TextFormField(
-                            maxLength: 1000,
-                            textDirection: TextDirection.rtl,
-                            controller: provider.descriptionController,
-                            // initialValue: "السلام عليكم",
-                            maxLines: 6,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                            ),
-                            decoration: InputDecoration(
-                              labelText:"كتابة النص" ,
-                              prefixIcon: Icon(Icons.text_snippet_outlined),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                  color: Colors.green,
-                                  width: 2,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                  color: Colors.green,
-                                  width: 2,
-                                ),
-                              ),
-                            ),
-                            enabled:provider.enabelEdit ,
+                    TextFormField(
+                      maxLength: 1000,
+                      textDirection: TextDirection.rtl,
+                      controller: provider.descriptionController,
+                      // initialValue: "السلام عليكم",
+                      maxLines: 6,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                      decoration: InputDecoration(
+                        labelText: "كتابة النص",
+                        prefixIcon: Icon(Icons.text_snippet_outlined),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.green,
+                            width: 2,
                           ),
-
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.green,
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      enabled: provider.enabelEdit,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green
-                      ),
-                        onPressed: ()async{
-                        WhatsData whats=WhatsData(description: provider.descriptionController.text);
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green),
+                        onPressed: () async {
+                          WhatsData whats = WhatsData(
+                              description: provider.descriptionController.text);
 
-                       if(provider.enabelEdit&&provider.descriptionController.text!=""){
-                      await   addData(whats);
-
-                         print("add to firebase");
-                       }
-                       else{
+                          if (provider.enabelEdit &&
+                              provider.descriptionController.text != "") {
+                            await updateUser(whats);
 
 
-                       }
+                            print("add to firebase");
+                          } else {}
 
                           provider.enableEditTextForm(false);
                         },
-                        child: Text("Save",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold
-                        ),
+                        child: Text(
+                          "Save",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
                         )),
                     SizedBox(
                       height: 10,
                     ),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green
-                        ),
-                        onPressed: (){
-                         provider.enableEditTextForm(true);
+                            backgroundColor: Colors.green),
+                        onPressed: () {
+                          provider.enableEditTextForm(true);
 
                           print("add to firebase");
                         },
-                        child: Text("Edit",
+                        child: Text(
+                          "Edit",
                           style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold
-                          ),
+                              fontSize: 30, fontWeight: FontWeight.bold),
                         )),
                   ],
                 ),

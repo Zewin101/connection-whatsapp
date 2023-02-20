@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:zewin/layout/layoutScreen.dart';
 import 'package:zewin/provider/provider.dart';
+import 'package:zewin/screens/loginScreen.dart';
 import 'package:zewin/screens/settingScreen.dart';
 
 import 'package:zewin/screens/whatsappScreen.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Whatsapp Demo',
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
         WhatsappScreen.routeName: (context) => WhatsappScreen(),
         Layout_screen.routeName:(context) => Layout_screen(),
         Setting_Screen.routeName:(context) => Setting_Screen(),
-
+        Login_Screen.routeName:(context) => Login_Screen(),
       },
     );
   }

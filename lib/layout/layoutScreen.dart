@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zewin/provider/provider.dart';
 import 'package:zewin/screens/whatsappScreen.dart';
+import '../componant/url.dart';
 import '../generated/assets.dart';
 import '../screens/settingScreen.dart';
 
@@ -36,8 +37,11 @@ class Layout_screen extends StatelessWidget {
             backgroundColor: Colors.green,
             shape:
                 StadiumBorder(side: BorderSide(width: 3, color: Colors.white)),
-            onPressed: () {},
-            child: Icon(Icons.add),
+            onPressed: () {
+              UrlCreate.launchUrlCall(numPhone: provider.sendPhoneController.text,
+                  messageWhats: provider.descriptionController.text);
+            },
+            child: Icon(Icons.phone),
           ),
           bottomNavigationBar: BottomAppBar(
             shape: CircularNotchedRectangle(),
