@@ -43,7 +43,7 @@ class _SplashPageState extends State<SplashPage> {
       ),
       ),
       navigator:provider.firebaseUser != null
-          ? WhatsappScreen()
+          ? Layout_screen()
           :  Login_Screen(),
       durationInSeconds: 2,
       logoWidth:MediaQuery.of(context).size.width*0.60,
